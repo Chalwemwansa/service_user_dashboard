@@ -1,0 +1,144 @@
+.mainContainer {
+  background-color: white;
+  display: flex;
+  justify-content: center;
+}
+
+.subContainer {
+  max-width: 955px;
+  width: 85%;
+  margin-bottom: 20px;
+}
+
+.dashboardStyles {
+  font-family: "Montserrat";
+  font-weight: bolder;
+  font-size: 48px;
+  color: #4d6773;
+  margin-top: 15px;
+  margin-bottom: 0px;
+  letter-spacing: 0.5px;
+}
+
+.searchBarAndFilterContainer {
+  display: flex;
+  flex-direction: row;
+  height: 36px;
+  margin-top: 35px;
+  justify-content: space-between;
+  margin-bottom: 0px;
+}
+
+.searchBarStyles {
+  width: 75%;
+  height: 36px;
+  border-bottom-width: 1px;
+  border-bottom-color: #b2b2e2;
+  border-bottom-style: solid;
+  position: relative;
+}
+
+.searchBarStyles:hover {
+  background-color: #f3f3ff;
+  border-top-left-radius: 5;
+  border-top-right-radius: 5;
+}
+
+.searchImageSizes {
+  height: 15px;
+  width: 17px;
+  position: absolute;
+  top: 13px;
+  left: 16px;
+}
+
+.searchBarTextInputStyles:focus {
+  outline: none;
+  border-color: transparent;
+}
+
+.searchBarTextInputStyles {
+  color: #919da3;
+  font-weight: 900;
+  font-family: "Montserrat";
+  font-size: 15px;
+  border: transparent;
+  position: absolute;
+  top: 13px;
+  left: 49px;
+  letter-spacing: 0.5px;
+  width: 84%;
+  background-color: rgba(255, 255, 255, 0);
+}
+
+.searchBarTextInputStyles::placeholder {
+  color: #919da3;
+  font-weight: 900;
+  font-family: "Montserrat";
+  letter-spacing: 0.5px;
+  font-size: 15px;
+}
+
+.filterMainContainer {
+  width: 120px;
+  height: 36px;
+  position: relative;
+}
+
+.filterIcon {
+  height: 20px;
+  width: 17px;
+  position: absolute;
+  top: 8px;
+  right: 60px;
+}
+
+.filterText {
+  color: #4d6773;
+  font-weight: 900;
+  font-family: "Montserrat";
+  letter-spacing: 0.5px;
+  font-size: 20px;
+  position: absolute;
+  right: 0px;
+  top: 8px;
+}
+
+.serviceUsersStyles {
+  margin-top: 85px;
+  font-family: "Montserrat";
+  font-weight: 900;
+  font-size: 40px;
+  color: #4d6773;
+  margin-top: 55px;
+  margin-bottom: 14px;
+  letter-spacing: 0.5px;
+}
+
+.pagesContainerMain {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.pageContainer {
+  width: 40px;
+  height: 28px;
+  border: 1px solid #b2b2e2;
+  border-radius: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pageContainer:hover {
+  background-color: #e1e1fa;
+}
+
+.pageContainerText {
+  font-family: "Montserrat-Medium";
+  font-size: 16px;
+  letter-spacing: 0.5px;
+  color: #4d6773;
+}

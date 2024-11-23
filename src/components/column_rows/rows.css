@@ -1,0 +1,119 @@
+.mainRowContainer {
+  display: flex;
+  flex-direction: row;
+  white-space: nowrap;
+  justify-content: flex-start;
+  height: 40px;
+  margin-bottom: 5px;
+  width: 990px;
+}
+
+.headerRowContainer {
+  display: flex;
+  flex-direction: row;
+  white-space: nowrap;
+  justify-content: flex-start;
+  height: 40px;
+  margin-right: 10px;
+}
+
+.headerRowStyles {
+  padding-left: 12px !important;
+}
+
+.nameContainer {
+  width: 220px;
+  min-width: 220px;
+  height: 100%;
+  margin-left: 0px;
+  margin-right: 0px;
+  display: flex;
+  align-items: center;
+}
+
+.ageContainer {
+  width: 90px;
+  min-width: 90px;
+  height: 100%;
+  margin-left: 0px;
+  margin-right: 0px;
+  display: flex;
+  align-items: center;
+}
+
+.careStatusContainer {
+  width: 170px;
+  min-width: 170px;
+  height: 100%;
+  margin-left: 0px;
+  margin-right: 0px;
+  display: flex;
+  align-items: center;
+}
+
+.nextAppointmentStatusContainer {
+  width: 240px;
+  min-width: 240px;
+  height: 100%;
+  margin-left: 0px;
+  margin-right: 0px;
+  display: flex;
+  align-items: center;
+}
+
+.headertextStyles {
+  font-family: "Montserrat";
+  font-weight: 900;
+  font-size: 24px;
+  color: #4d6773;
+  letter-spacing: 0.5px;
+  padding-left: 10px;
+  justify-self: center;
+}
+
+.valuestextStyles {
+  font-family: "Montserrat-medium";
+  font-size: 19px;
+  color: #4d6773;
+  letter-spacing: 0.5px;
+  padding-left: 12px;
+}
+
+.activeColor {
+  background-color: #dcf9dc;
+}
+
+.inactiveColor {
+  background-color: #fde4e4;
+}
+
+.buttonStyles {
+  height: 35px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border: 1px solid #b2b2e2;
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 18px;
+}
+
+.buttonStyles:hover {
+  background-color: #f3f3ff;
+}
+
+.buttonText {
+  font-family: "Montserrat-Medium";
+  font-size: 16px;
+  color: #4d6773;
+  letter-spacing: 0.5px;
+}
+
+.nameTextStyles {
+  padding-left: 0px;
+}
+
+.space {
+  margin-right: 20px;
+}
