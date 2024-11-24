@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
 import "./rows.css";
 import ViewProfile from "../view profile modal/profile";
+import EditProfile from "../edit profile modal/editprofile";
 export default function Row({ item, type }) {
   const [date, setDate] = useState("");
   const [EditModalOpen, setEditModalOpen] = useState(false);
+  const [viewModalOpen, setViewModalOpen] = useState(false);
 
   useEffect(() => {
     if (type !== "header") {
@@ -78,9 +80,6 @@ export default function Row({ item, type }) {
         >
           <span className="valuestextStyles">{date}</span>
         </div>
-        <div className="buttonStyles">
-          <span className="buttonText">Edit</span>
-        </div>
         <div
           className="buttonStyles"
           onClick={(e) => {
@@ -88,9 +87,23 @@ export default function Row({ item, type }) {
             setEditModalOpen(true);
           }}
         >
+          <span className="buttonText">Edit</span>
+        </div>
+        <div
+          className="buttonStyles"
+          onClick={(e) => {
+            e.preventDefault();
+            setViewModalOpen(true);
+          }}
+        >
           <span className="buttonText">View profile</span>
         </div>
         <ViewProfile
+          modalOpen={viewModalOpen}
+          setModalOpen={setViewModalOpen}
+          item={item}
+        />
+        <EditProfile
           modalOpen={EditModalOpen}
           setModalOpen={setEditModalOpen}
           item={item}
