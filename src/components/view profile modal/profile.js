@@ -56,6 +56,10 @@ export default function ViewProfile({ modalOpen, setModalOpen, item }) {
               <span className="viewValueHeaderStyles">{item.name}</span>
             </div>
             <div className="viewItemContainer">
+              <span className="viewDataHeaderStyles">Age</span>
+              <span className="viewValueHeaderStyles">{item.age}</span>
+            </div>
+            <div className="viewItemContainer">
               <span className="viewDataHeaderStyles">Care Status</span>
               <span className="viewValueHeaderStyles">{item.careStatus}</span>
             </div>

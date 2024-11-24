@@ -17,13 +17,14 @@
   width: 90%;
   min-width: 520px;
   max-width: 765px;
-  height: 374px;
   background-color: white;
   display: flex;
   border-radius: 5px;
   align-items: center;
   flex-direction: column;
   padding-left: 10px;
+  padding-bottom: 27px;
+  padding-top: 27px;
   padding-right: 10px;
 }
 
@@ -33,7 +34,6 @@
   font-weight: 800;
   letter-spacing: 0.5px;
   color: #4d6773;
-  margin-top: 27px;
   margin-bottom: 0px;
   justify-self: center;
   height: 44px;
