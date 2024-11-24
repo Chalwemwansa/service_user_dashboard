@@ -1,0 +1,92 @@
+.ViewProfileModal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(133, 133, 136, 0.82);
+}
+
+.ViewProfileSubContainer {
+  position: relative;
+  width: 90%;
+  min-width: 520px;
+  max-width: 765px;
+  height: 374px;
+  background-color: white;
+  display: flex;
+  border-radius: 5px;
+  align-items: center;
+  flex-direction: column;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.ViewProfileHeaderStyles {
+  font-family: "Montserrat";
+  font-size: 36px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  color: #4d6773;
+  margin-top: 27px;
+  margin-bottom: 0px;
+  justify-self: center;
+  height: 44px;
+}
+
+.ViewMainContainerExitModalStyes {
+  position: absolute;
+  top: 13px;
+  right: 13px;
+  width: 26px;
+  height: 26px;
+  border: 2px solid #919da3;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ViewMainContainerExitModalStyes:hover {
+  background-color: #f3f3ff;
+}
+
+.viewCrossSizes {
+  width: 14px;
+  height: 14px;
+}
+
+.viewItemsMainContainer {
+  width: 92%;
+  padding-top: 8px;
+  margin-top: 27px;
+}
+
+.viewItemContainer {
+  width: 594px;
+  height: 44px;
+  display: flex;
+  flex-direction: row;
+  gap: 13px;
+}
+
+.viewDataHeaderStyles {
+  font-family: "Montserrat";
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  color: #4d6773;
+}
+
+.viewValueHeaderStyles {
+  font-family: "Montserrat";
+  font-size: 22px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  color: #4d6773;
+}
