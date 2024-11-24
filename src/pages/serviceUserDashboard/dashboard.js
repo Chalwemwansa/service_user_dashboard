@@ -5,6 +5,7 @@ import "./dashboard.css";
 import SummaryCards from "../../components/summary_cards/summary_cards";
 import UpcomingAppointments from "../../components/upcoming_appointments/upcoming_appointments";
 import UrgentUpdates from "../../components/urgent_updates/urgent_updates";
+import FilterModal from "../../components/filterModal/filterModal";
 
 const PageView = ({ item, setPage }) => {
   return (
@@ -15,7 +16,7 @@ const PageView = ({ item, setPage }) => {
         setPage(item.num);
       }}
     >
-      <span className="pageContainerText">{item.num}</span>
+      <span className="pageContainerText">{item.num + 1}</span>
     </div>
   );
 };
@@ -29,6 +30,7 @@ export default function DashBoard() {
   const [searchTerm, setSearchTerm] = useState("");
   const [serviceUsers, setServiceUsers] = useState(serviceUsersData);
   const [refreshData, setRefreshData] = useState(false);
+  const [filterModalShow, setFilterModalShow] = useState(false);
 
   function handleSearchTerm() {
     if (searchTerm === "") {
@@ -93,7 +95,15 @@ export default function DashBoard() {
               onKeyDown={(event) => event.key === "Enter" && handleSearchTerm()}
             />
           </div>
-          <div className="filterMainContainer">
+          <div
+            className="filterMainContainer"
+            onClick={(e) => {
+              e.preventDefault();
+              setServiceUsers(serviceUsersData);
+              setRefreshData((prev) => !prev);
+              setFilterModalShow(true);
+            }}
+          >
             <img
               src={require("../../assets/filter icon.png")}
               className="filterIcon"
@@ -102,12 +112,19 @@ export default function DashBoard() {
           </div>
         </div>
         <h2 className="serviceUsersStyles">Service users</h2>
-        <Row type="header" />
-        {pageData.map((serviceUser) => (
-          <div key={serviceUser.id}>
-            <Row item={serviceUser} />
-          </div>
-        ))}
+        <div className="rows-div">
+          <Row type="header" />
+          {pageData.map((serviceUser) => (
+            <div key={serviceUser.id}>
+              <Row
+                item={serviceUser}
+                setServiceUsers={setServiceUsers}
+                setRefresh={setRefreshData}
+                refresh={refreshData}
+              />
+            </div>
+          ))}
+        </div>
         <div className="pagesContainerMain">
           {pages.map((item) => (
             <div key={item.num}>
@@ -119,9 +136,19 @@ export default function DashBoard() {
         <SummaryCards serviceUsers={serviceUsers} />
         <h2 className="subHeaderCardsStyles">Alerts</h2>
         <h3 className="subsubHeaderCardsStyles">Upcoming appointments</h3>
-        <UpcomingAppointments serviceUsers={serviceUsers} />
+        <UpcomingAppointments
+          serviceUsers={serviceUsers}
+          refresh={setRefreshData}
+        />
         <h3 className="subsubHeaderCardsStyles">Urgent updates</h3>
-        <UrgentUpdates serviceUsers={serviceUsers} />
+        <UrgentUpdates serviceUsers={serviceUsers} refresh={refreshData} />
+        <FilterModal
+          serviceUsers={serviceUsers}
+          setRefreshData={setRefreshData}
+          modalShow={filterModalShow}
+          setModalShow={setFilterModalShow}
+          setServiceUsers={setServiceUsers}
+        />
       </div>
     </div>
   );

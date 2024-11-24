@@ -3,14 +3,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100vw;
+  width: 100%;
 }
 
 .subContainer {
   max-width: 1110px;
-  width: 85%;
+  width: 90%;
   margin-bottom: 20px;
-  align-self: center;
 }
 
 .dashboardStyles {
@@ -168,4 +167,10 @@
   color: #4d6773;
   margin-bottom: 14px;
   letter-spacing: 0.5px;
+}
+
+.rows-div {
+  overflow-x: auto;
+  white-space: nowrap;
+  width: 100%;
 }

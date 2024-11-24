@@ -3,13 +3,37 @@ import "./editProfile.css";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
-export default function EditProfile({ modalOpen, setModalOpen, item }) {
+export default function EditProfile({
+  modalOpen,
+  setModalOpen,
+  item,
+  setServiceUsers,
+  setRefresh,
+}) {
   const [name, setName] = useState(item.name);
   const [age, setAge] = useState(item.age);
   const [careStatus, setCareStatus] = useState(item.careStatus);
   const [nextAppointment, setNextAppointment] = useState(
     new Date(item.nextAppointment)
   );
+
+  function editUser() {
+    setServiceUsers((prev) => {
+      const newList = [];
+      prev.forEach((serviceUser) => {
+        if (serviceUser.id === item.id) {
+          serviceUser.age = age;
+          serviceUser.name = name;
+          serviceUser.careStatus = careStatus;
+          serviceUser.nextAppointment = String(nextAppointment);
+        }
+        newList.push(serviceUser);
+      });
+      return newList;
+    });
+    setRefresh((prev) => !prev);
+    setModalOpen(false);
+  }
 
   return (
     modalOpen && (
@@ -77,7 +101,13 @@ export default function EditProfile({ modalOpen, setModalOpen, item }) {
               />
             </div>
           </div>
-          <div className="EditProfileButtonMainContainer">
+          <div
+            className="EditProfileButtonMainContainer"
+            onClick={(e) => {
+              e.preventDefault();
+              editUser();
+            }}
+          >
             <span className="editprofilButtonText">Edit</span>
           </div>
         </div>

@@ -2,7 +2,13 @@ import { useEffect, useState } from "react";
 import "./rows.css";
 import ViewProfile from "../view profile modal/profile";
 import EditProfile from "../edit profile modal/editprofile";
-export default function Row({ item, type }) {
+export default function Row({
+  item,
+  type,
+  setServiceUsers,
+  setRefresh,
+  refresh,
+}) {
   const [date, setDate] = useState("");
   const [EditModalOpen, setEditModalOpen] = useState(false);
   const [viewModalOpen, setViewModalOpen] = useState(false);
@@ -34,7 +40,7 @@ export default function Row({ item, type }) {
       ).padStart(2, "0")} hrs`;
       setDate(dateString);
     }
-  }, []);
+  }, [refresh]);
 
   if (type === "header") {
     return (
@@ -107,6 +113,8 @@ export default function Row({ item, type }) {
           modalOpen={EditModalOpen}
           setModalOpen={setEditModalOpen}
           item={item}
+          setServiceUsers={setServiceUsers}
+          setRefresh={setRefresh}
         />
       </div>
     );

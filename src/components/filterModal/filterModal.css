@@ -1,0 +1,156 @@
+.FilterModalModal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(133, 133, 136, 0.82);
+}
+
+.FilterModalSubContainer {
+  position: relative;
+  width: 600px;
+  background-color: white;
+  display: flex;
+  border-radius: 5px;
+  align-items: center;
+  flex-direction: column;
+  padding-left: 10px;
+  padding-bottom: 27px;
+  padding-top: 27px;
+  padding-right: 10px;
+}
+
+.FilterModalHeaderStyles {
+  font-family: "Montserrat";
+  font-size: 36px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  color: #4d6773;
+  margin-bottom: 0px;
+  justify-self: center;
+  height: 44px;
+}
+
+.FilterModalMainContainerExitModalStyes {
+  position: absolute;
+  top: 13px;
+  right: 13px;
+  width: 26px;
+  height: 26px;
+  border: 2px solid #919da3;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.FilterModalMainContainerExitModalStyes:hover {
+  background-color: #f3f3ff;
+}
+
+.FilterModalCrossSizes {
+  width: 14px;
+  height: 14px;
+}
+
+.FilterModalItemsMainContainer {
+  width: 92%;
+  padding-top: 8px;
+  margin-top: 27px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 27px;
+}
+
+.FilterModalItemContainer {
+  width: 80%;
+  height: 30px;
+  display: flex;
+  flex-direction: row;
+  gap: 13px;
+  align-items: center;
+  border-bottom: 1px solid #b2b2e2;
+}
+
+.FilterModalDataHeaderStyles {
+  font-family: "Montserrat";
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  color: #4d6773;
+}
+
+.FilterModalValueHeaderStyles {
+  font-family: "Montserrat";
+  font-size: 22px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  color: #4d6773;
+}
+
+.inputFieldStyles {
+  font-family: "Montserrat";
+  font-size: 22px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  color: #4d6773;
+  border: 0 solid white;
+  width: 290px;
+}
+
+.inputFieldStyles:focus {
+  outline: none;
+}
+
+.inputFieldStyles::placeholder {
+  color: #919da3;
+  font-weight: 500;
+  font-family: "Montserrat";
+  letter-spacing: 0.5px;
+  font-size: 20px;
+}
+
+.FilterModalUrgentUpdates {
+  width: 80%;
+  height: 30px;
+  display: flex;
+  flex-direction: row;
+  gap: 13px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.checkBoxStyles {
+  width: 25px;
+  height: 25px;
+}
+
+.FilterButtonMainContainer {
+  border: 1px solid #b2b2e2;
+  width: 125px;
+  height: 33px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 27px;
+}
+
+.FilterButtonMainContainer:hover {
+  background-color: #f3f3ff;
+}
+
+.filterButtonText {
+  color: #919da3;
+  font-weight: 500;
+  font-family: "Montserrat";
+  letter-spacing: 0.5px;
+  font-size: 20px;
+}

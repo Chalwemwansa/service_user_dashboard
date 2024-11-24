@@ -2,7 +2,7 @@ import UpcomingAppointments from "../upcoming_appointments/upcoming_appointments
 import "./urgent_updates.css";
 import { useState, useEffect } from "react";
 
-export default function UrgentUpdates({ serviceUsers }) {
+export default function UrgentUpdates({ serviceUsers, refresh }) {
   const [UrgentUpdates, setUrgentUpdates] = useState([]);
 
   useEffect(() => {
@@ -42,7 +42,7 @@ export default function UrgentUpdates({ serviceUsers }) {
       }
     });
     setUrgentUpdates(UrgentUpdates);
-  }, []);
+  }, [refresh]);
 
   return (
     <div className="mainUrgentUpdatesCardsContainer">

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import "./upcoming_appointments.css";
 
-export default function UpcomingAppointments({ serviceUsers }) {
+export default function UpcomingAppointments({ serviceUsers, refresh }) {
   const [UpcomingAppointments, setUpcomingAppointments] = useState([]);
 
   useEffect(() => {
@@ -22,6 +22,7 @@ export default function UpcomingAppointments({ serviceUsers }) {
           status: `${serviceUserDate.getHours()}:${String(
             serviceUserDate.getMinutes()
           ).padStart(2, "0")} hrs today`,
+          day: "today",
         });
       } else if (
         serviceUserDate.getDate() === nextDay.getDate() &&
@@ -33,11 +34,15 @@ export default function UpcomingAppointments({ serviceUsers }) {
           status: `${serviceUserDate.getHours()}:${String(
             serviceUserDate.getMinutes()
           ).padStart(2, "0")} hrs tommorow`,
+          day: "tommorow",
         });
       }
     });
-    setUpcomingAppointments(UpcomingAppointments);
-  }, []);
+    setUpcomingAppointments([
+      ...UpcomingAppointments.filter((item) => item.day === "today"),
+      ...UpcomingAppointments.filter((item) => item.day === "tommorow"),
+    ]);
+  }, [refresh]);
 
   return (
     <div className="mainUpcomingCardsContainer">
