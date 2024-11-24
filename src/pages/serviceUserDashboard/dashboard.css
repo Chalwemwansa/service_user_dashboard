@@ -2,17 +2,19 @@
   background-color: white;
   display: flex;
   justify-content: center;
+  align-items: center;
+  width: 100vw;
 }
 
 .subContainer {
-  max-width: 955px;
+  max-width: 1110px;
   width: 85%;
   margin-bottom: 20px;
+  align-self: center;
 }
 
 .dashboardStyles {
-  font-family: "Montserrat";
-  font-weight: bolder;
+  font-family: "Montserrat-ExtraBold";
   font-size: 48px;
   color: #4d6773;
   margin-top: 15px;
@@ -24,7 +26,7 @@
   display: flex;
   flex-direction: row;
   height: 36px;
-  margin-top: 35px;
+  margin-top: 20px;
   justify-content: space-between;
   margin-bottom: 0px;
 }
@@ -65,7 +67,7 @@
   border: transparent;
   position: absolute;
   top: 13px;
-  left: 49px;
+  left: 44px;
   letter-spacing: 0.5px;
   width: 84%;
   background-color: rgba(255, 255, 255, 0);
@@ -73,16 +75,21 @@
 
 .searchBarTextInputStyles::placeholder {
   color: #919da3;
-  font-weight: 900;
+  font-weight: 500;
   font-family: "Montserrat";
   letter-spacing: 0.5px;
-  font-size: 15px;
+  font-size: 17px;
 }
 
 .filterMainContainer {
-  width: 120px;
+  width: 90px;
   height: 36px;
   position: relative;
+}
+
+.filterMainContainer:hover {
+  background-color: #f3f3ff;
+  border-radius: 5px;
 }
 
 .filterIcon {
@@ -90,7 +97,7 @@
   width: 17px;
   position: absolute;
   top: 8px;
-  right: 60px;
+  right: 65px;
 }
 
 .filterText {
@@ -100,17 +107,16 @@
   letter-spacing: 0.5px;
   font-size: 20px;
   position: absolute;
-  right: 0px;
+  right: 5px;
   top: 8px;
 }
 
 .serviceUsersStyles {
-  margin-top: 85px;
+  margin-top: 55px;
   font-family: "Montserrat";
   font-weight: 900;
   font-size: 40px;
   color: #4d6773;
-  margin-top: 55px;
   margin-bottom: 14px;
   letter-spacing: 0.5px;
 }
@@ -120,10 +126,11 @@
   flex-direction: row;
   gap: 10px;
   margin-top: 10px;
+  margin-bottom: 0px;
 }
 
 .pageContainer {
-  width: 40px;
+  width: 55px;
   height: 28px;
   border: 1px solid #b2b2e2;
   border-radius: 25px;
@@ -133,7 +140,7 @@
 }
 
 .pageContainer:hover {
-  background-color: #e1e1fa;
+  background-color: #f3f3ff;
 }
 
 .pageContainerText {
@@ -141,4 +148,24 @@
   font-size: 16px;
   letter-spacing: 0.5px;
   color: #4d6773;
+}
+
+.subHeaderCardsStyles {
+  margin-top: 55px;
+  font-family: "Montserrat";
+  font-weight: 900;
+  font-size: 40px;
+  color: #4d6773;
+  margin-bottom: 14px;
+  letter-spacing: 0.5px;
+}
+
+.subsubHeaderCardsStyles {
+  margin-top: 22px;
+  font-family: "Montserrat";
+  font-weight: 500;
+  font-size: 32px;
+  color: #4d6773;
+  margin-bottom: 14px;
+  letter-spacing: 0.5px;
 }

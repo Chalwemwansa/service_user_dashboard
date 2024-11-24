@@ -1,0 +1,38 @@
+.mainCardsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  flex-direction: row;
+  gap: 22px;
+}
+
+.singleGreenCardContainer {
+  width: 259px;
+  height: 148px;
+  border-radius: 25px;
+  background-color: #eefbee;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.singleRedCardContainer {
+  width: 259px;
+  height: 148px;
+  border-radius: 25px;
+  background-color: #fff1f1;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cardTextStyles {
+  font-family: "Montserrat-medium";
+  font-size: 16px;
+  letter-spacing: 0.5px;
+  color: #4d6773;
+  text-align: center;
+  width: 245px;
+}

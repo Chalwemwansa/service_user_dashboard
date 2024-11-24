@@ -26,7 +26,7 @@ export default function Row({ item, type }) {
       const monthName = monthNames[appointmentdate.getMonth()];
       const dateString = `${monthName} ${appointmentdate.getDate()}, ${appointmentdate.getFullYear()} ${appointmentdate.getHours()}:${String(
         appointmentdate.getMinutes()
-      ).padStart(2, "0")}`;
+      ).padStart(2, "0")} hrs`;
       setDate(dateString);
     }
   }, []);

@@ -2,6 +2,9 @@ import { useEffect, useState } from "react";
 import Row from "../../components/column_rows/rows";
 import serviceUsers from "../../utils/api";
 import "./dashboard.css";
+import SummaryCards from "../../components/summary_cards/summary_cards";
+import UpcomingAppointments from "../../components/upcoming_appointments/upcoming_appointments";
+import UrgentUpdates from "../../components/urgent_updates/urgent_updates";
 
 const PageView = ({ item, setPage }) => {
   return (
@@ -36,8 +39,8 @@ export default function DashBoard() {
     const startItem = page * pageLimit;
     const endItem = startItem + pageLimit;
     let newList = [];
-    if (endItem > serviceUsers.length - 1) {
-      newList = serviceUsers.slice(startItem, serviceUsers.length - 1);
+    if (endItem > serviceUsers.length) {
+      newList = serviceUsers.slice(startItem, serviceUsers.length);
     } else {
       newList = serviceUsers.slice(startItem, endItem);
     }
@@ -81,6 +84,13 @@ export default function DashBoard() {
             </div>
           ))}
         </div>
+        <h2 className="subHeaderCardsStyles">Summary cards</h2>
+        <SummaryCards serviceUsers={serviceUsers} />
+        <h2 className="subHeaderCardsStyles">Alerts</h2>
+        <h3 className="subsubHeaderCardsStyles">Upcoming appointments</h3>
+        <UpcomingAppointments serviceUsers={serviceUsers} />
+        <h3 className="subsubHeaderCardsStyles">Urgent updates</h3>
+        <UrgentUpdates serviceUsers={serviceUsers} />
       </div>
     </div>
   );

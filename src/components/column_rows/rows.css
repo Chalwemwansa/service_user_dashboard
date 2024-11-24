@@ -5,7 +5,7 @@
   justify-content: flex-start;
   height: 40px;
   margin-bottom: 5px;
-  width: 990px;
+  width: 100px;
 }
 
 .headerRowContainer {
@@ -52,8 +52,8 @@
 }
 
 .nextAppointmentStatusContainer {
-  width: 240px;
-  min-width: 240px;
+  width: 260px;
+  min-width: 260px;
   height: 100%;
   margin-left: 0px;
   margin-right: 0px;

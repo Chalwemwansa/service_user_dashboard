@@ -1,0 +1,38 @@
+.mainUpcomingCardsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  flex-direction: row;
+  gap: 22px;
+}
+
+.singleUpcomingCardContainer {
+  width: 259px;
+  height: 148px;
+  border-radius: 25px;
+  background-color: #d6edf8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.UpcomingcardTextStyles {
+  font-family: "Montserrat-medium";
+  font-size: 16px;
+  letter-spacing: 0.5px;
+  color: #4d6773;
+  text-align: center;
+  width: 245px;
+}
+
+.nameUpcomingCardStyles {
+  font-family: "Montserrat";
+  font-weight: 500;
+  font-size: 20px;
+  letter-spacing: 0.5px;
+  color: #4d6773;
+  text-align: center;
+  width: 245px;
+  margin-bottom: 7px;
+}
