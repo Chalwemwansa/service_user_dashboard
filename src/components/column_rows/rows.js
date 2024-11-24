@@ -35,16 +35,16 @@ export default function Row({ item, type }) {
     return (
       <div className="headerRowContainer">
         <div className="nameContainer">
-          <t className="headertextStyles nameTextStyles">Name</t>
+          <span className="headertextStyles nameTextStyles">Name</span>
         </div>
         <div className="ageContainer headerStyles">
-          <t className="headertextStyles">Age</t>
+          <span className="headertextStyles">Age</span>
         </div>
         <div className="careStatusContainer">
-          <t className="headertextStyles">Care status</t>
+          <span className="headertextStyles">Care status</span>
         </div>
         <div className="nextAppointmentStatusContainer headerStyles">
-          <t className="headertextStyles">Next appointment</t>
+          <span className="headertextStyles">Next appointment</span>
         </div>
       </div>
     );
@@ -52,7 +52,7 @@ export default function Row({ item, type }) {
     return (
       <div className="mainRowContainer">
         <div className="nameContainer">
-          <t className="valuestextStyles nameTextStyles">{item.name}</t>
+          <span className="valuestextStyles nameTextStyles">{item.name}</span>
         </div>
         <div
           className={
@@ -61,10 +61,10 @@ export default function Row({ item, type }) {
               : "ageContainer inactiveColor"
           }
         >
-          <t className="valuestextStyles">{item.age}</t>
+          <span className="valuestextStyles">{item.age}</span>
         </div>
         <div className="careStatusContainer">
-          <t className="valuestextStyles">{item.careStatus}</t>
+          <span className="valuestextStyles">{item.careStatus}</span>
         </div>
         <div
           className={
@@ -73,13 +73,13 @@ export default function Row({ item, type }) {
               : "nextAppointmentStatusContainer inactiveColor"
           }
         >
-          <t className="valuestextStyles">{date}</t>
+          <span className="valuestextStyles">{date}</span>
         </div>
         <div className="buttonStyles">
-          <t className="buttonText">Edit</t>
+          <span className="buttonText">Edit</span>
         </div>
         <div className="buttonStyles">
-          <t className="buttonText">View profile</t>
+          <span className="buttonText">View profile</span>
         </div>
       </div>
     );

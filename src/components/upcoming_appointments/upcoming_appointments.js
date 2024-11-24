@@ -41,8 +41,8 @@ export default function UpcomingAppointments({ serviceUsers }) {
 
   return (
     <div className="mainUpcomingCardsContainer">
-      {UpcomingAppointments.map((appointment) => (
-        <div className="singleUpcomingCardContainer">
+      {UpcomingAppointments.map((appointment, index) => (
+        <div key={index} className="singleUpcomingCardContainer">
           <span className="nameUpcomingCardStyles">{appointment.name}</span>
           <span className="UpcomingcardTextStyles">{appointment.status}</span>
         </div>

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import Row from "../../components/column_rows/rows";
-import serviceUsers from "../../utils/api";
+import serviceUsersData from "../../utils/api";
 import "./dashboard.css";
 import SummaryCards from "../../components/summary_cards/summary_cards";
 import UpcomingAppointments from "../../components/upcoming_appointments/upcoming_appointments";
@@ -26,6 +26,30 @@ export default function DashBoard() {
   const [pages, setPages] = useState([]);
   const [pageData, setPageData] = useState([]);
   const [numPages, setNumpages] = useState(0);
+  const [searchTerm, setSearchTerm] = useState("");
+  const [serviceUsers, setServiceUsers] = useState(serviceUsersData);
+  const [refreshData, setRefreshData] = useState(false);
+
+  function handleSearchTerm() {
+    if (searchTerm === "") {
+      setServiceUsers(serviceUsersData);
+      setRefreshData((prev) => !prev);
+      setPage(0);
+    } else {
+      let newServiceUsersList = [];
+      serviceUsersData.forEach((serviceUser) => {
+        if (
+          String(serviceUser.id) === String(searchTerm) ||
+          serviceUser.name.toLowerCase().includes(searchTerm.toLowerCase())
+        ) {
+          newServiceUsersList.push(serviceUser);
+        }
+      });
+      setServiceUsers(newServiceUsersList);
+      setRefreshData((prev) => !prev);
+      setPage(0);
+    }
+  }
 
   useEffect(() => {
     const numPages2 = Math.ceil(serviceUsers.length / pageLimit);
@@ -45,7 +69,7 @@ export default function DashBoard() {
       newList = serviceUsers.slice(startItem, endItem);
     }
     setPageData([...newList]);
-  }, [page]);
+  }, [page, refreshData]);
   return (
     <div className="mainContainer">
       <div className="subContainer">
@@ -55,11 +79,18 @@ export default function DashBoard() {
             <img
               className="searchImageSizes"
               src={require("../../assets/search icon.png")}
+              onClick={(e) => {
+                e.preventDefault();
+                handleSearchTerm();
+              }}
             />
             <input
               type="text"
               placeholder="Search by service user name or id..."
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
               className="searchBarTextInputStyles"
+              onKeyDown={(event) => event.key === "Enter" && handleSearchTerm()}
             />
           </div>
           <div className="filterMainContainer">
@@ -67,7 +98,7 @@ export default function DashBoard() {
               src={require("../../assets/filter icon.png")}
               className="filterIcon"
             />
-            <t className="filterText">Filter</t>
+            <span className="filterText">Filter</span>
           </div>
         </div>
         <h2 className="serviceUsersStyles">Service users</h2>

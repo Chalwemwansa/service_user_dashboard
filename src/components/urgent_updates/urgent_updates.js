@@ -46,8 +46,8 @@ export default function UrgentUpdates({ serviceUsers }) {
 
   return (
     <div className="mainUrgentUpdatesCardsContainer">
-      {UrgentUpdates.map((UrgentUpdate) => (
-        <div className="singleUrgentUpdatesCardContainer">
+      {UrgentUpdates.map((UrgentUpdate, index) => (
+        <div key={index} className="singleUrgentUpdatesCardContainer">
           <span className="nameUrgentUpdatesCardStyles">
             {UrgentUpdate.name}
           </span>

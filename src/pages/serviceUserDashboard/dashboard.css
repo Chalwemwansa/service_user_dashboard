@@ -60,13 +60,13 @@
 }
 
 .searchBarTextInputStyles {
-  color: #919da3;
-  font-weight: 900;
+  color: #4d6773;
+  font-weight: 500;
   font-family: "Montserrat";
-  font-size: 15px;
+  font-size: 19px;
   border: transparent;
   position: absolute;
-  top: 13px;
+  top: 9px;
   left: 44px;
   letter-spacing: 0.5px;
   width: 84%;
