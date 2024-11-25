@@ -103,7 +103,7 @@ export default function DashBoard() {
               className="filterMainContainer"
               onClick={(e) => {
                 e.preventDefault();
-                setServiceUsers(serviceUsersData);
+                setPageServiceUsers(serviceUsersData);
                 setRefreshData((prev) => !prev);
                 setFilterModalShow(true);
               }}
