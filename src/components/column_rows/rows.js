@@ -108,6 +108,7 @@ export default function Row({
           modalOpen={viewModalOpen}
           setModalOpen={setViewModalOpen}
           item={item}
+          refresh={refresh}
         />
         <EditProfile
           modalOpen={EditModalOpen}

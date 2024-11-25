@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import "./summary_cards.css";
 
-export default function SummaryCards({ serviceUsers }) {
+export default function SummaryCards({ serviceUsers, refresh }) {
   const [users, setUsers] = useState(0);
   const [activeUsers, setActiveUsers] = useState(0);
   const [usersWithAppointements, setUserWithAppointments] = useState(0);
@@ -31,7 +31,7 @@ export default function SummaryCards({ serviceUsers }) {
     setInactiveUsers(InactiveUsers);
     setUsersOnHold(usersOnHold);
     setUserWithAppointments(usersWithAppointements);
-  }, []);
+  }, [refresh]);
 
   return (
     <div className="mainCardsContainer">

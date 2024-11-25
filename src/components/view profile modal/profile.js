@@ -1,6 +1,11 @@
 import { useEffect, useState } from "react";
 import "./profile.css";
-export default function ViewProfile({ modalOpen, setModalOpen, item }) {
+export default function ViewProfile({
+  modalOpen,
+  setModalOpen,
+  item,
+  refresh,
+}) {
   const [nextAppointment, setNextAppointment] = useState(null);
 
   useEffect(() => {
@@ -28,7 +33,7 @@ export default function ViewProfile({ modalOpen, setModalOpen, item }) {
       appointmentdate.getMinutes()
     ).padStart(2, "0")} hrs`;
     setNextAppointment(dateString);
-  }, []);
+  }, [refresh]);
   return (
     modalOpen && (
       <div className="ViewProfileModal">

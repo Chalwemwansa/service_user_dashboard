@@ -29,12 +29,13 @@ export default function DashBoard() {
   const [numPages, setNumpages] = useState(0);
   const [searchTerm, setSearchTerm] = useState("");
   const [serviceUsers, setServiceUsers] = useState(serviceUsersData);
+  const [pageServiceUsers, setPageServiceUsers] = useState(serviceUsersData);
   const [refreshData, setRefreshData] = useState(false);
   const [filterModalShow, setFilterModalShow] = useState(false);
 
   function handleSearchTerm() {
     if (searchTerm === "") {
-      setServiceUsers(serviceUsersData);
+      setPageServiceUsers(serviceUsersData);
       setRefreshData((prev) => !prev);
       setPage(0);
     } else {
@@ -47,14 +48,14 @@ export default function DashBoard() {
           newServiceUsersList.push(serviceUser);
         }
       });
-      setServiceUsers(newServiceUsersList);
+      setPageServiceUsers(newServiceUsersList);
       setRefreshData((prev) => !prev);
       setPage(0);
     }
   }
 
   useEffect(() => {
-    const numPages2 = Math.ceil(serviceUsers.length / pageLimit);
+    const numPages2 = Math.ceil(pageServiceUsers.length / pageLimit);
     if (numPages2 !== numPages) {
       setPages([]);
       setNumpages(numPages2);
@@ -65,10 +66,10 @@ export default function DashBoard() {
     const startItem = page * pageLimit;
     const endItem = startItem + pageLimit;
     let newList = [];
-    if (endItem > serviceUsers.length) {
-      newList = serviceUsers.slice(startItem, serviceUsers.length);
+    if (endItem > pageServiceUsers.length) {
+      newList = pageServiceUsers.slice(startItem, pageServiceUsers.length);
     } else {
-      newList = serviceUsers.slice(startItem, endItem);
+      newList = pageServiceUsers.slice(startItem, endItem);
     }
     setPageData([...newList]);
   }, [page, refreshData]);
@@ -133,21 +134,21 @@ export default function DashBoard() {
           ))}
         </div>
         <h2 className="subHeaderCardsStyles">Summary cards</h2>
-        <SummaryCards serviceUsers={serviceUsers} />
+        <SummaryCards serviceUsers={serviceUsers} refresh={refreshData} />
         <h2 className="subHeaderCardsStyles">Alerts</h2>
         <h3 className="subsubHeaderCardsStyles">Upcoming appointments</h3>
         <UpcomingAppointments
           serviceUsers={serviceUsers}
-          refresh={setRefreshData}
+          refresh={refreshData}
         />
         <h3 className="subsubHeaderCardsStyles">Urgent updates</h3>
         <UrgentUpdates serviceUsers={serviceUsers} refresh={refreshData} />
         <FilterModal
-          serviceUsers={serviceUsers}
+          serviceUsers={pageServiceUsers}
           setRefreshData={setRefreshData}
           modalShow={filterModalShow}
           setModalShow={setFilterModalShow}
-          setServiceUsers={setServiceUsers}
+          setServiceUsers={setPageServiceUsers}
         />
       </div>
     </div>
