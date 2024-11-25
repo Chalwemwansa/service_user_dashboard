@@ -98,7 +98,7 @@ export default function EditProfile({
                 onChange={(date) => setNextAppointment(date)}
                 dateFormat="yyyy/MM/dd"
                 className="EditProfileValueHeaderStyles"
-                showTimeSelect
+                showTimeSelect={true}
               />
             </div>
           </div>

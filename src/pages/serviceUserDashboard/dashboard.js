@@ -77,61 +77,65 @@ export default function DashBoard() {
     <div className="mainContainer">
       <div className="subContainer">
         <h1 className="dashboardStyles">Dashboard</h1>
-        <div className="searchBarAndFilterContainer">
-          <div className="searchBarStyles">
-            <img
-              className="searchImageSizes"
-              src={require("../../assets/search icon.png")}
-              onClick={(e) => {
-                e.preventDefault();
-                handleSearchTerm();
-              }}
-            />
-            <input
-              type="text"
-              placeholder="Search by service user name or id..."
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-              className="searchBarTextInputStyles"
-              onKeyDown={(event) => event.key === "Enter" && handleSearchTerm()}
-            />
-          </div>
-          <div
-            className="filterMainContainer"
-            onClick={(e) => {
-              e.preventDefault();
-              setServiceUsers(serviceUsersData);
-              setRefreshData((prev) => !prev);
-              setFilterModalShow(true);
-            }}
-          >
-            <img
-              src={require("../../assets/filter icon.png")}
-              className="filterIcon"
-            />
-            <span className="filterText">Filter</span>
-          </div>
-        </div>
-        <h2 className="serviceUsersStyles">Service users</h2>
-        <div className="rows-div">
-          <Row type="header" />
-          {pageData.map((serviceUser) => (
-            <div key={serviceUser.id}>
-              <Row
-                item={serviceUser}
-                setServiceUsers={setServiceUsers}
-                setRefresh={setRefreshData}
-                refresh={refreshData}
+        <div className="topPartStyles">
+          <div className="searchBarAndFilterContainer">
+            <div className="searchBarStyles">
+              <img
+                className="searchImageSizes"
+                src={require("../../assets/search icon.png")}
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleSearchTerm();
+                }}
+              />
+              <input
+                type="text"
+                placeholder="Search by service user name or id..."
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                className="searchBarTextInputStyles"
+                onKeyDown={(event) =>
+                  event.key === "Enter" && handleSearchTerm()
+                }
               />
             </div>
-          ))}
-        </div>
-        <div className="pagesContainerMain">
-          {pages.map((item) => (
-            <div key={item.num}>
-              <PageView item={item} setPage={setPage} />
+            <div
+              className="filterMainContainer"
+              onClick={(e) => {
+                e.preventDefault();
+                setServiceUsers(serviceUsersData);
+                setRefreshData((prev) => !prev);
+                setFilterModalShow(true);
+              }}
+            >
+              <img
+                src={require("../../assets/filter icon.png")}
+                className="filterIcon"
+              />
+              <span className="filterText">Filter</span>
             </div>
-          ))}
+          </div>
+          <h2 className="serviceUsersStyles">Service users</h2>
+          <div className="rows-div">
+            <Row type="header" />
+            {pageData.map((serviceUser) => (
+              <div key={serviceUser.id}>
+                <Row
+                  item={serviceUser}
+                  setServiceUsers={setServiceUsers}
+                  setRefresh={setRefreshData}
+                  refresh={refreshData}
+                />
+              </div>
+            ))}
+          </div>
+          <div className="pagesContainerMain">
+            {pages.map((item) => (
+              <div key={item.num}>
+                <PageView item={item} setPage={setPage} />
+              </div>
+            ))}
+          </div>
         </div>
         <h2 className="subHeaderCardsStyles">Summary cards</h2>
         <SummaryCards serviceUsers={serviceUsers} refresh={refreshData} />
