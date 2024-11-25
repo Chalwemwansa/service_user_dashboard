@@ -98,6 +98,7 @@ export default function EditProfile({
                 onChange={(date) => setNextAppointment(date)}
                 dateFormat="yyyy/MM/dd"
                 className="EditProfileValueHeaderStyles"
+                showTimeSelect
               />
             </div>
           </div>
@@ -108,7 +109,7 @@ export default function EditProfile({
               editUser();
             }}
           >
-            <span className="editprofilButtonText">Edit</span>
+            <span className="editprofilButtonText">Save</span>
           </div>
         </div>
       </div>

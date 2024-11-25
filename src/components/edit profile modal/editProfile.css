@@ -28,10 +28,9 @@
 }
 
 .EditProfileProfileHeaderStyles {
-  font-family: "Montserrat";
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 36px;
-  font-weight: 800;
-  letter-spacing: 0.5px;
+  font-weight: 700;
   color: #4d6773;
   margin-bottom: 0px;
   justify-self: center;
@@ -80,18 +79,16 @@
 }
 
 .EditProfileDataHeaderStyles {
-  font-family: "Montserrat";
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 24px;
-  font-weight: 800;
-  letter-spacing: 0.5px;
+  font-weight: 700;
   color: #4d6773;
 }
 
 .EditProfileValueHeaderStyles {
-  font-family: "Montserrat";
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 22px;
   font-weight: 500;
-  letter-spacing: 0.5px;
   color: #4d6773;
   border: 1px solid #b2b2e2;
   border-radius: 5px;
@@ -101,8 +98,7 @@
 .EditProfileValueHeaderStyles::placeholder {
   color: #919da3;
   font-weight: 500;
-  font-family: "Montserrat";
-  letter-spacing: 0.5px;
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 20px;
 }
 
@@ -127,9 +123,8 @@
 }
 
 .editprofilButtonText {
-  color: #919da3;
+  color: #4d6773;
+  font-family: Arial, Helvetica, sans-serif;
   font-weight: 500;
-  font-family: "Montserrat";
-  letter-spacing: 0.5px;
   font-size: 20px;
 }

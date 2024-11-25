@@ -62,20 +62,20 @@
 }
 
 .headertextStyles {
-  font-family: "Montserrat";
-  font-weight: 900;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 700;
   font-size: 24px;
   color: #4d6773;
-  letter-spacing: 0.5px;
+
   padding-left: 10px;
   justify-self: center;
 }
 
 .valuestextStyles {
-  font-family: "Montserrat-medium";
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 19px;
   color: #4d6773;
-  letter-spacing: 0.5px;
+
   padding-left: 12px;
 }
 
@@ -104,10 +104,9 @@
 }
 
 .buttonText {
-  font-family: "Montserrat-Medium";
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 16px;
   color: #4d6773;
-  letter-spacing: 0.5px;
 }
 
 .nameTextStyles {
